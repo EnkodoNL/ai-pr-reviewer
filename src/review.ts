@@ -431,7 +431,7 @@ ${filename}: ${summary}
     if (releaseNotesResponse === '') {
       info('release notes: nothing obtained from openai')
     } else {
-      let message = '### Summary by CodeRabbit\n\n'
+      let message = '### Summary by CodeKitten\n\n'
       message += releaseNotesResponse
       try {
         await commenter.updateDescription(
@@ -713,7 +713,7 @@ ${
 <details>
 <summary>Tips</summary>
 
-### Chat with <img src="https://avatars.githubusercontent.com/in/347564?s=41&u=fad245b8b4c7254fe63dd4dcd4d662ace122757e&v=4" alt="Image description" width="20" height="20">  CodeKitten Bot (\`@codekittenai\`)
+### Chat with <img src="https://github.com/EnkodoNL/ai-pr-reviewer/blob/528238fa8b5d416ec71dbe9a370d32627224d5ab/kitten.png" alt="Image description" width="20" height="20">  CodeKitten Bot (\`@codekittenai\`)
 - Reply on review comments left by this bot to ask follow-up questions. A review comment is a comment on a diff or a file.
 - Invite the bot into a review comment chain by tagging \`@codekittenai\` in a reply.
 
