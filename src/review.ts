@@ -24,6 +24,8 @@ const repo = context.repo
 
 const ignoreKeyword = '@codekittenai: ignore'
 
+const SKIP_KEYWORDS = ['LGTM', 'looks good to me']
+
 export const codeReview = async (
   lightBot: Bot,
   heavyBot: Bot,
@@ -297,13 +299,13 @@ ${
 `
 
   // update the existing comment with in progress status
-  const inProgressSummarizeCmt = commenter.addInProgressStatus(
-    existingSummarizeCmtBody,
-    statusMsg
-  )
+  // const inProgressSummarizeCmt = commenter.addInProgressStatus(
+  //   existingSummarizeCmtBody,
+  //   statusMsg
+  // )
 
   // add in progress status to the summarize comment
-  await commenter.comment(`${inProgressSummarizeCmt}`, SUMMARIZE_TAG, 'replace')
+  // await commenter.comment(`${inProgressSummarizeCmt}`, SUMMARIZE_TAG, 'replace')
 
   const summariesFailed: string[] = []
 
@@ -624,8 +626,7 @@ ${commentChain}
             // check for LGTM
             if (
               !options.reviewCommentLGTM &&
-              (review.comment.includes('LGTM') ||
-                review.comment.includes('looks good to me'))
+              SKIP_KEYWORDS.some(keyword => review.comment.includes(keyword))
             ) {
               lgtmCount += 1
               continue

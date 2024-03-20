@@ -249,7 +249,7 @@ ${statusMsg}
           // eslint-disable-next-line camelcase
           commit_id: commitId,
           event: 'COMMENT',
-          body
+          body: ''
         })
       } catch (e) {
         warning(`Failed to submit empty review: ${e}`)
@@ -326,7 +326,7 @@ ${statusMsg}
         // eslint-disable-next-line camelcase
         review_id: review.data.id,
         event: 'COMMENT',
-        body
+        body: ''
       })
     } catch (e) {
       warning(
@@ -753,27 +753,27 @@ ${chain}
     return allCommits
   }
 
-  // add in-progress status to the comment body
-  addInProgressStatus(commentBody: string, statusMsg: string): string {
-    const start = commentBody.indexOf(IN_PROGRESS_START_TAG)
-    const end = commentBody.indexOf(IN_PROGRESS_END_TAG)
-    // add to the beginning of the comment body if the marker doesn't exist
-    // otherwise do nothing
-    if (start === -1 || end === -1) {
-      return `${IN_PROGRESS_START_TAG}
+  //   // add in-progress status to the comment body
+  //   addInProgressStatus(commentBody: string, statusMsg: string): string {
+  //     const start = commentBody.indexOf(IN_PROGRESS_START_TAG)
+  //     const end = commentBody.indexOf(IN_PROGRESS_END_TAG)
+  //     // add to the beginning of the comment body if the marker doesn't exist
+  //     // otherwise do nothing
+  //     if (start === -1 || end === -1) {
+  //       return `${IN_PROGRESS_START_TAG}
 
-Currently reviewing new changes in this PR...
+  // Currently reviewing new changes in this PR...
 
-${statusMsg}
+  // ${statusMsg}
 
-${IN_PROGRESS_END_TAG}
+  // ${IN_PROGRESS_END_TAG}
 
----
+  // ---
 
-${commentBody}`
-    }
-    return commentBody
-  }
+  // ${commentBody}`
+  //     }
+  //     return commentBody
+  //   }
 
   // remove in-progress status from the comment body
   removeInProgressStatus(commentBody: string): string {
