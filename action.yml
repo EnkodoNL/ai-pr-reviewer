@@ -14,7 +14,7 @@ inputs:
     description:
       'Max files to summarize and review. Less than or equal to 0 means no
       limit.'
-    default: '150'
+    default: '50'
   review_simple_changes:
     required: false
     description: 'Review even when the changes are simple'
@@ -139,7 +139,7 @@ inputs:
   disable_review:
     required: false
     description: 'Only provide the summary and skip the code review.'
-    default: 'false'
+    default: 'true'
   disable_release_notes:
     required: false
     description: 'Disable release notes'
