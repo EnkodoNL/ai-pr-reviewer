@@ -7,40 +7,40 @@ import {octokit} from './octokit'
 const context = github_context
 const repo = context.repo
 
-export const COMMENT_GREETING = `${getInput('bot_icon')}   CodeRabbit`
+export const COMMENT_GREETING = `${getInput('bot_icon')}   CodeKitten`
 
 export const COMMENT_TAG =
-  '<!-- This is an auto-generated comment by OSS CodeRabbit -->'
+  '<!-- This is an auto-generated comment by OSS CodeKitten -->'
 
 export const COMMENT_REPLY_TAG =
-  '<!-- This is an auto-generated reply by OSS CodeRabbit -->'
+  '<!-- This is an auto-generated reply by OSS CodeKitten -->'
 
 export const SUMMARIZE_TAG =
-  '<!-- This is an auto-generated comment: summarize by OSS CodeRabbit -->'
+  '<!-- This is an auto-generated comment: summarize by OSS CodeKitten -->'
 
 export const IN_PROGRESS_START_TAG =
-  '<!-- This is an auto-generated comment: summarize review in progress by OSS CodeRabbit -->'
+  '<!-- This is an auto-generated comment: summarize review in progress by OSS CodeKitten -->'
 
 export const IN_PROGRESS_END_TAG =
-  '<!-- end of auto-generated comment: summarize review in progress by OSS CodeRabbit -->'
+  '<!-- end of auto-generated comment: summarize review in progress by OSS CodeKitten -->'
 
 export const DESCRIPTION_START_TAG =
-  '<!-- This is an auto-generated comment: release notes by OSS CodeRabbit -->'
+  '<!-- This is an auto-generated comment: release notes by OSS CodeKitten -->'
 export const DESCRIPTION_END_TAG =
-  '<!-- end of auto-generated comment: release notes by OSS CodeRabbit -->'
+  '<!-- end of auto-generated comment: release notes by OSS CodeKitten -->'
 
-export const RAW_SUMMARY_START_TAG = `<!-- This is an auto-generated comment: raw summary by OSS CodeRabbit -->
+export const RAW_SUMMARY_START_TAG = `<!-- This is an auto-generated comment: raw summary by OSS CodeKitten -->
 <!--
 `
 export const RAW_SUMMARY_END_TAG = `-->
-<!-- end of auto-generated comment: raw summary by OSS CodeRabbit -->`
+<!-- end of auto-generated comment: raw summary by OSS CodeKitten -->`
 
-export const SHORT_SUMMARY_START_TAG = `<!-- This is an auto-generated comment: short summary by OSS CodeRabbit -->
+export const SHORT_SUMMARY_START_TAG = `<!-- This is an auto-generated comment: short summary by OSS CodeKitten -->
 <!--
 `
 
 export const SHORT_SUMMARY_END_TAG = `-->
-<!-- end of auto-generated comment: short summary by OSS CodeRabbit -->`
+<!-- end of auto-generated comment: short summary by OSS CodeKitten -->`
 
 export const COMMIT_ID_START_TAG = '<!-- commit_ids_reviewed_start -->'
 export const COMMIT_ID_END_TAG = '<!-- commit_ids_reviewed_end -->'
@@ -206,7 +206,7 @@ ${COMMENT_TAG}`
       })
 
       const pendingReview = reviews.data.find(
-        review => review.state === 'PENDING'
+        (review: any) => review.state === 'PENDING'
       )
 
       if (pendingReview) {
@@ -745,7 +745,7 @@ ${chain}
           page
         })
 
-        allCommits.push(...commits.data.map(commit => commit.sha))
+        allCommits.push(...commits.data.map((commit: any) => commit.sha))
         page++
       } while (commits.data.length > 0)
     }

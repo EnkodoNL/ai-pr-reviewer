@@ -17,7 +17,7 @@ import {getTokenCount} from './tokenizer'
 // eslint-disable-next-line camelcase
 const context = github_context
 const repo = context.repo
-const ASK_BOT = '@coderabbitai'
+const ASK_BOT = '@codekittenai'
 
 export const handleReviewComment = async (
   heavyBot: Bot,
@@ -103,7 +103,7 @@ export const handleReviewComment = async (
         if (diffAll.data) {
           const files = diffAll.data.files
           if (files != null) {
-            const file = files.find(f => f.filename === comment.path)
+            const file = files.find((f: any) => f.filename === comment.path)
             if (file != null && file.patch) {
               fileDiff = file.patch
             }

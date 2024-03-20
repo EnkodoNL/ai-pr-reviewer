@@ -1,10 +1,3 @@
-# CodeRabbit Pro
-
-This is an old version of [CodeRabbit](http://coderabbit.ai) and is now in the maintenance mode.
-We recommend installing the Pro version from [CodeRabbit](http://coderabbit.ai). The Pro version is a total redesign and offers significantly better reviews that learn from your usage and improve over time. CodeRabbit Pro is free for open source projects. 
-
-[![Discord](https://img.shields.io/badge/Join%20us%20on-Discord-blue?logo=discord&style=flat-square)](https://discord.gg/GsXnASn26c)
-
 # AI-based PR reviewer and summarizer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -130,7 +123,7 @@ value. For example, to review docs/blog posts, you can use the following prompt:
 
 ```yaml
 system_message: |
-  You are `@coderabbitai` (aka `github-actions[bot]`), a language model
+  You are `@codekittenai` (aka `github-actions[bot]`), a language model
   trained by OpenAI. Your purpose is to act as a highly experienced
   DevRel (developer relations) professional with focus on cloud-native
   infrastructure.
@@ -161,11 +154,11 @@ system_message: |
 
 You can reply to a review comment made by this action and get a response based
 on the diff context. Additionally, you can invite the bot to a conversation by
-tagging it in the comment (`@coderabbitai`).
+tagging it in the comment (`@codekittenai`).
 
 Example:
 
-> @coderabbitai Please generate a test plan for this file.
+> @codekittenai Please generate a test plan for this file.
 
 Note: A review comment is a comment made on a diff or a file in the pull
 request.
@@ -177,7 +170,7 @@ to review documentation, you can ignore PRs that only change the documentation.
 To ignore a PR, add the following keyword in the PR description:
 
 ```text
-@coderabbitai: ignore
+@codekittenai: ignore
 ```
 
 ## Examples
