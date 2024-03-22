@@ -12,8 +12,8 @@ export class TokenLimits {
         this.responseTokens = 4000
         break
       case 'gpt-3.5-turbo-16k':
-        this.maxTokens = 16300
-        this.responseTokens = 3000
+        this.maxTokens = 50000
+        this.responseTokens = 5000
         break
       case 'gpt-4':
         this.maxTokens = 8000

@@ -61,6 +61,7 @@ export class Inputs {
     if (!content) {
       return ''
     }
+
     if (this.systemMessage) {
       content = content.replace('$system_message', this.systemMessage)
     }
@@ -97,6 +98,7 @@ export class Inputs {
     if (this.comment) {
       content = content.replace('$comment', this.comment)
     }
+
     return content
   }
 }
