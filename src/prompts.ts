@@ -53,7 +53,7 @@ Important:
   the summary. You must only use the triage status format above to indicate that.
 `
   summarizeChangesets = `Provided below are changesets in this pull request. Changesets 
-are in chronlogical order and new changesets are appended to the
+are in chronological order order and new changesets are appended to the
 end of the list. The format consists of filename(s) and the summary 
 of changes for those files. There is a separator between each changeset.
 Your task is to deduplicate and group together files with
@@ -107,10 +107,14 @@ Task: Review new hunks for substantive issues using provided context and respond
 Output: Review comments in markdown with exact line number ranges in new hunks. Start and end line numbers must be within the same hunk. For single-line comments, start=end line number. Must use example response format below.
 Use fenced code blocks using the relevant language identifier where applicable.
 Don't annotate code snippets with line numbers. Format and indent code correctly.
-Do not use \`suggestion\` code blocks.
-For fixes, use \`diff\` code blocks, marking changes with \`+\` or \`-\`. The line number range for comments with fix snippets must exactly match the range to replace in the new hunk.
+You may use \`suggestion\` code blocks, marking changes with \`+\` or \`-\` for minor issues.
+For fixes, use \`diff\` or  \`suggestion\` (if applicable) code blocks, marking changes with \`+\` or \`-\`. The line number range for comments with fix snippets must exactly match the range to replace in the new hunk.
+Make sure to provide a response for each hunk in the diff. If there are no issues found on a line range, you MUST respond with the text \`LGTM!\` for that line range in the review section.
+You are reviewing on GitHub, so use the GitHub markdown format where possible for comments.
 
 - Do NOT provide general feedback, summaries, explanations of changes, or praises for making good additions.
+- You can assume that the code logic is tested and properly implemented elsewhere in the codebase.
+- You can assume that the code is syntactically correct and will run without errors.
 - Do NOT comment on code style and formatting.
 - Avoid speculating about the rest of the codebase that is not present in the PR.
 - Focus solely on offering specific, objective insights based on the 
@@ -211,8 +215,7 @@ $diff
 
 ## Instructions
 
-Please reply directly to the new comment (instead of suggesting 
-a reply) and your reply will be posted as-is.
+Please reply directly to the new comment (instead of suggesting a reply) and your reply will be posted as-is.
 
 If the comment contains instructions/requests for you, please comply. 
 For example, if the comment is asking you to generate documentation 
