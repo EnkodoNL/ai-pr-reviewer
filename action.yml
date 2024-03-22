@@ -238,8 +238,7 @@ inputs:
     required: false
     description: 'The icon for the bot'
     default:
-      '<img
-      src="https://github.com/EnkodoNL/ai-pr-reviewer/blob/528238fa8b5d416ec71dbe9a370d32627224d5ab/kitten.png"
+      '<img src="https://enkodonl.github.io/ai-pr-reviewer/images/kitten.png"
       alt="Image description" width="20" height="20">'
 runs:
   using: 'node20'
